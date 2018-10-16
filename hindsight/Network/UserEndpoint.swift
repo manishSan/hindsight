@@ -9,63 +9,64 @@
 import Foundation
 import Moya
 
-struct DynamicProvider: TargetType {
-    let baseURL: URL
-    
-    let target: TargetType
-    
-    var path: String {
-        return target.path
-    }
-    
-    var method: Moya.Method {
-        return target.method
-    }
-    
-    var sampleData: Data {
-        return target.sampleData
-    }
-    
-    var task: Task {
-        return target.task
-    }
-    
-    var headers: [String : String]? {
-        return target.headers
-    }
-}
-
-
 enum AuthService {
     case register(userName: String, password: String)
     case login(userName: String, password: String)
-    case refresh(
+    case refresh
 }
 
 extension AuthService: TargetType {
     var baseURL: URL {
-        return "http://localhost:8080/"
+        fatalError("Control should not come here, get the base URL from DynamicProvider")
     }
     
     var path: String {
-        ""
+        switch self {
+        case .register:
+            return Constants.NonUI.Network.Auth.Register.api
+        case .login:
+            return Constants.NonUI.Network.Auth.Login.api
+        case .refresh:
+            return Constants.NonUI.Network.Auth.Refresh.api
+        }
     }
     
     var method: Moya.Method {
-        <#code#>
+        switch self {
+        case .register: fallthrough
+        case .login:
+            return .post
+        case .refresh:
+            return .get
+        }
     }
     
     var sampleData: Data {
-        <#code#>
+        return Data()
     }
     
     var task: Task {
-        <#code#>
+        switch self {
+        case .login(let userName, let password):
+            return .requestParameters(parameters: [Constants.NonUI.Network.Auth.Login.Param.username: userName,
+                                                   Constants.NonUI.Network.Auth.Login.Param.password: password],
+                                      encoding: URLEncoding.default)
+        case .register(let userName, let password):
+            return .requestParameters(parameters: [Constants.NonUI.Network.Auth.Login.Param.username: userName,
+                                                   Constants.NonUI.Network.Auth.Login.Param.password: password],
+                                      encoding: URLEncoding.default)
+        case .refresh:
+            return .requestPlain
+        }
     }
-    
+
+    /// heades for endpoint
     var headers: [String : String]? {
-        <#code#>
+        return nil
     }
-    
-    
+
+    /// The method used for parameter encoding.
+    public var parameterEncoding: ParameterEncoding {
+        return URLEncoding.default
+    }
 }
