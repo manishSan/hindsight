@@ -23,6 +23,9 @@
 		484C49F821768245005DAD02 /* TopicsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484C49F721768245005DAD02 /* TopicsEndpoint.swift */; };
 		484C49FB217682D2005DAD02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484C49FA217682D2005DAD02 /* User.swift */; };
 		484C49FD217682E2005DAD02 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484C49FC217682E2005DAD02 /* Topic.swift */; };
+		484C49FF2177B74E005DAD02 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484C49FE2177B74E005DAD02 /* NetworkProvider.swift */; };
+		484C4A012177B7C1005DAD02 /* UserCredentialsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484C4A002177B7C1005DAD02 /* UserCredentialsProtocol.swift */; };
+		48B81A4F217FB71600E88970 /* DynamicProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B81A4E217FB71600E88970 /* DynamicProviderTest.swift */; };
 		5CB12AEB16B76563E3A812C9 /* Pods_hindsight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E01241D54980B14F3FE94E /* Pods_hindsight.framework */; };
 		8ABF35211C032DEBAB01E7ED /* Pods_hindsightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32BC16CBEFF0429C4BF490C5 /* Pods_hindsightTests.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +74,9 @@
 		484C49F721768245005DAD02 /* TopicsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsEndpoint.swift; sourceTree = "<group>"; };
 		484C49FA217682D2005DAD02 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		484C49FC217682E2005DAD02 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		484C49FE2177B74E005DAD02 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		484C4A002177B7C1005DAD02 /* UserCredentialsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialsProtocol.swift; sourceTree = "<group>"; };
+		48B81A4E217FB71600E88970 /* DynamicProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicProviderTest.swift; sourceTree = "<group>"; };
 		5DDD3D2AAEC624CB701A0669 /* Pods_hindsightUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hindsightUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DEEE5EA3C2482228B4B1D74 /* Pods-hindsightUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hindsightUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hindsightUITests/Pods-hindsightUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE13EC9378DD555A1B42CDE0 /* Pods-hindsightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hindsightTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-hindsightTests/Pods-hindsightTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 				134B794021739433009370E7 /* UserEndpoint.swift */,
 				484C49EA21766B32005DAD02 /* DynamicProvider.swift */,
 				484C49F721768245005DAD02 /* TopicsEndpoint.swift */,
+				484C49FE2177B74E005DAD02 /* NetworkProvider.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -141,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				484C49EC21766C78005DAD02 /* Resources */,
+				484C49F9217682BA005DAD02 /* Model */,
 				134B793F217393FE009370E7 /* Network */,
 				13BA21DC217278F900064C03 /* AppDelegate.swift */,
 				13BA21DE217278F900064C03 /* ViewController.swift */,
@@ -156,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				13BA21F1217278FA00064C03 /* hindsightTests.swift */,
+				48B81A4E217FB71600E88970 /* DynamicProviderTest.swift */,
 				13BA21F3217278FA00064C03 /* Info.plist */,
 			);
 			path = hindsightTests;
@@ -173,7 +182,6 @@
 		484C49EC21766C78005DAD02 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				484C49F9217682BA005DAD02 /* Model */,
 				484C49F5217677CD005DAD02 /* Generated.Strings.swift */,
 				484C49EE21766F84005DAD02 /* Generated.Colors.swift */,
 				484C49F421767424005DAD02 /* Localizable.strings */,
@@ -186,6 +194,7 @@
 			children = (
 				484C49FA217682D2005DAD02 /* User.swift */,
 				484C49FC217682E2005DAD02 /* Topic.swift */,
+				484C4A002177B7C1005DAD02 /* UserCredentialsProtocol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -352,15 +361,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-hindsightTests-checkManifestLockResult.txt",
 			);
@@ -374,13 +379,9 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 			);
 			name = Swiftgen;
-			outputFileListPaths = (
-			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,8 +392,6 @@
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-hindsight/Pods-hindsight-frameworks.sh",
@@ -405,8 +404,6 @@
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
@@ -426,15 +423,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-hindsight-checkManifestLockResult.txt",
 			);
@@ -448,21 +441,21 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-hindsightTests/Pods-hindsightTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Cuckoo/Cuckoo.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cuckoo.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
@@ -476,15 +469,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-hindsightUITests-checkManifestLockResult.txt",
 			);
@@ -507,8 +496,10 @@
 				13BA21DF217278F900064C03 /* ViewController.swift in Sources */,
 				484C49FB217682D2005DAD02 /* User.swift in Sources */,
 				13BA21DD217278F900064C03 /* AppDelegate.swift in Sources */,
+				484C4A012177B7C1005DAD02 /* UserCredentialsProtocol.swift in Sources */,
 				484C49EF21766F84005DAD02 /* Generated.Colors.swift in Sources */,
 				484C49F821768245005DAD02 /* TopicsEndpoint.swift in Sources */,
+				484C49FF2177B74E005DAD02 /* NetworkProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48B81A4F217FB71600E88970 /* DynamicProviderTest.swift in Sources */,
 				13BA21F2217278FA00064C03 /* hindsightTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -2,6 +2,8 @@
  platform :ios, '10.0'
 
 def testing_pods
+    pod 'Quick'
+    pod 'Nimble'
     pod 'RxSwift'
     pod 'RxBlocking'
     pod 'RxTest'

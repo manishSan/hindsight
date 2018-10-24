@@ -11,3 +11,7 @@ import Foundation
 protocol UserProtocol {
     var username: String { get }
 }
+
+struct User: UserProtocol {
+    let username: String
+}
