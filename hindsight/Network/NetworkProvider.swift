@@ -85,7 +85,7 @@ protocol NetworkProviderProtocol {
     ///
     /// - Parameter user: user credentials
     /// - Returns: Single<Result<Bool>>
-    func register(user : UserCredentialsProtocol) -> Single<NetworkResult>
+    func register(user: UserCredentialsProtocol) -> Single<NetworkResult>
 
     /// Login User
     ///
@@ -119,8 +119,8 @@ struct NetworkProvider: NetworkProviderProtocol {
     ///
     /// - Parameter user: user credentials
     /// - Returns: Single<Result<Bool>>
-    func register(user : UserCredentialsProtocol) -> Single<NetworkResult> {
-        return webServiceRequest(method: AuthService.register(userName: user.userName, password: user.password))
+    func register(user: UserCredentialsProtocol) -> Single<NetworkResult> {
+        return webServiceRequest(method: AuthEndpoint.register(userName: user.userName, password: user.password))
     }
 
     /// Login User
@@ -128,7 +128,7 @@ struct NetworkProvider: NetworkProviderProtocol {
     /// - Parameter user: user credentials
     /// - Returns: Single<Result<Bool>>
     func login(user: UserCredentialsProtocol) -> Single<NetworkResult> {
-        return webServiceRequest(method: AuthService.login(userName: user.userName, password: user.password))
+        return webServiceRequest(method: AuthEndpoint.login(userName: user.userName, password: user.password))
     }
 
     /// get a list of topics
@@ -167,7 +167,7 @@ extension NetworkProvider {
             .request(method)
             .debug()
             .map { (response) -> NetworkResult in
-                var json: Any? = nil
+                var json: Any?
                 do {
                     let response = try response.filterSuccessfulStatusCodes()
                     if !response.data.isEmpty {

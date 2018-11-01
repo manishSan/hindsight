@@ -11,37 +11,52 @@ import Moya
 import RxSwift
 
 /// The dynamic base URL provider
+/// This class wraps the endpoints defined in the app and provide functionality to
+/// dynamically change the URL based on configuration.
 struct DynamicTarget: TargetType {
+    /// The base URL based on configuration
     let baseURL: URL
 
-    let target: TargetType
+    /// the actual target
+    private let target: TargetType
 
+    /// Initializer
+    ///
+    /// - Parameters:
+    ///   - baseURL: base URL
+    ///   - target: target
     init(baseURL: URL, target: TargetType) {
         self.baseURL = baseURL
         self.target = target
     }
 
+    /// TargetType path
     var path: String {
         return target.path
     }
 
+    /// TargetType method
     var method: Moya.Method {
         return target.method
     }
 
+    /// TargetType sampleData
     var sampleData: Data {
         return target.sampleData
     }
 
+    /// TargetType task
     var task: Task {
         return target.task
     }
 
-    var headers: [String : String]? {
+    /// TargetType headers
+    var headers: [String: String]? {
         return target.headers
     }
 }
 
+/// a Dynamic provider
 class DynamicProvider: MoyaProvider<DynamicTarget> {
     let baseURL: URL
 
@@ -50,6 +65,8 @@ class DynamicProvider: MoyaProvider<DynamicTarget> {
     }
 }
 
+// MARK: - Reactive extension
+/// we are just routing the calls to actual target type
 extension Reactive where Base: DynamicProvider {
     func request(_ token: TargetType, callbackQueue: DispatchQueue? = nil) -> Single<Response> {
         let dynamicTarget = DynamicTarget(baseURL: base.baseURL, target: token)
@@ -63,7 +80,3 @@ extension Reactive where Base: DynamicProvider {
         return provider.rx.requestWithProgress(dynamicTarget, callbackQueue: callbackQueue)
     }
 }
-
-
-
-

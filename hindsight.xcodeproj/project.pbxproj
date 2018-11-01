@@ -114,9 +114,8 @@
 		134B793F217393FE009370E7 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				134B794021739433009370E7 /* UserEndpoint.swift */,
+				48B81A5021821BAB00E88970 /* Endpoints */,
 				484C49EA21766B32005DAD02 /* DynamicProvider.swift */,
-				484C49F721768245005DAD02 /* TopicsEndpoint.swift */,
 				484C49FE2177B74E005DAD02 /* NetworkProvider.swift */,
 			);
 			path = Network;
@@ -199,6 +198,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		48B81A5021821BAB00E88970 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				484C49F721768245005DAD02 /* TopicsEndpoint.swift */,
+				134B794021739433009370E7 /* UserEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
 		9B690D92507FFFE533A2FC70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +239,7 @@
 			buildPhases = (
 				60DEFDB15EE5A47A55B0B8D7 /* [CP] Check Pods Manifest.lock */,
 				484C49ED21766EAB005DAD02 /* Swiftgen */,
+				48B81A5121821F4900E88970 /* SwiftLint */,
 				13BA21D5217278F900064C03 /* Sources */,
 				13BA21D6217278F900064C03 /* Frameworks */,
 				13BA21D7217278F900064C03 /* Resources */,
@@ -387,6 +396,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/scripts/swiftgen.sh\"\n";
+		};
+		48B81A5121821F4900E88970 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n${PODS_ROOT}/SwiftLint/swiftlint autocorrect\n";
 		};
 		4E569BBF83F22285FE6620A1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

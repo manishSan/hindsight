@@ -9,17 +9,17 @@
 import Foundation
 import Moya
 
-enum AuthService {
+enum AuthEndpoint {
     case register(userName: String, password: String)
     case login(userName: String, password: String)
     case refresh
 }
 
-extension AuthService: TargetType {
+extension AuthEndpoint: TargetType {
     var baseURL: URL {
         fatalError("Control should not come here, get the base URL from DynamicProvider")
     }
-    
+
     var path: String {
         switch self {
         case .register:
@@ -30,7 +30,7 @@ extension AuthService: TargetType {
             return Constants.NonUI.Network.Auth.Refresh.api
         }
     }
-    
+
     var method: Moya.Method {
         switch self {
         case .register: fallthrough
@@ -40,11 +40,11 @@ extension AuthService: TargetType {
             return .get
         }
     }
-    
+
     var sampleData: Data {
         return Data()
     }
-    
+
     var task: Task {
         switch self {
         case .login(let userName, let password):
@@ -61,7 +61,7 @@ extension AuthService: TargetType {
     }
 
     /// heades for endpoint
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         return nil
     }
 

@@ -19,11 +19,11 @@ class DynamicProviderTest: QuickSpec {
     override func spec() {
         describe("Dynamic Provider") {
             context("On request call") {
-                let target = AuthService.refresh
+                let target = AuthEndpoint.refresh
                 let url = URL(string: "www.test.com")!
                 let result = try? DynamicProvider(baseURL: url)
                     .rx
-                    .request(DynamicTarget(baseURL: url, target: target))
+                    .request(target)
                     .toBlocking()
                     .first()!
                 it("should call MoyaProvider request") {
