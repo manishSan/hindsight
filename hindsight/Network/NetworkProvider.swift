@@ -174,7 +174,7 @@ extension NetworkProvider {
                         json = try response.mapJSON()
                     }
                     print("response json -> \(String(describing: json))")
-                } catch (let error) {
+                } catch let error {
                     print (error)
                     do {
                         let errorJson = try response.filter(statusCodes: 300...399).mapJSON(failsOnEmptyData: true)

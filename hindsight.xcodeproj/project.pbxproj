@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		134B794121739433009370E7 /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134B794021739433009370E7 /* UserEndpoint.swift */; };
 		13BA21DD217278F900064C03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BA21DC217278F900064C03 /* AppDelegate.swift */; };
-		13BA21DF217278F900064C03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BA21DE217278F900064C03 /* ViewController.swift */; };
-		13BA21E2217278F900064C03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13BA21E0217278F900064C03 /* Main.storyboard */; };
 		13BA21E4217278FA00064C03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13BA21E3217278FA00064C03 /* Assets.xcassets */; };
 		13BA21E7217278FA00064C03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13BA21E5217278FA00064C03 /* LaunchScreen.storyboard */; };
 		13BA21F2217278FA00064C03 /* hindsightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BA21F1217278FA00064C03 /* hindsightTests.swift */; };
@@ -25,6 +23,17 @@
 		484C49FD217682E2005DAD02 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484C49FC217682E2005DAD02 /* Topic.swift */; };
 		484C49FF2177B74E005DAD02 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484C49FE2177B74E005DAD02 /* NetworkProvider.swift */; };
 		484C4A012177B7C1005DAD02 /* UserCredentialsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484C4A002177B7C1005DAD02 /* UserCredentialsProtocol.swift */; };
+		4899846C2190A3CB00ADE46E /* BaseFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4899846B2190A3CB00ADE46E /* BaseFlowCoordinator.swift */; };
+		4899846E2190A45B00ADE46E /* Presenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4899846D2190A45B00ADE46E /* Presenting.swift */; };
+		489984712190A5D400ADE46E /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489984702190A5D400ADE46E /* ApiClient.swift */; };
+		489984742190A65200ADE46E /* Container+UnwrappedResolved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489984732190A65200ADE46E /* Container+UnwrappedResolved.swift */; };
+		489984762190A74200ADE46E /* DependencyConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489984752190A74200ADE46E /* DependencyConfigurator.swift */; };
+		4899847A2190B36F00ADE46E /* ConnectApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489984792190B36F00ADE46E /* ConnectApiClient.swift */; };
+		4899847D2190B40E00ADE46E /* ConnectFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4899847C2190B40E00ADE46E /* ConnectFlowCoordinator.swift */; };
+		489984802190DCEF00ADE46E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4899847F2190DCEF00ADE46E /* LoginViewController.swift */; };
+		489984822191EDF000ADE46E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489984812191EDF000ADE46E /* LoginViewModel.swift */; };
+		4899848C219225F400ADE46E /* DetailFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4899848B219225F400ADE46E /* DetailFlowCoordinator.swift */; };
+		4899848E2192276200ADE46E /* CreateFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4899848D2192276200ADE46E /* CreateFlowCoordinator.swift */; };
 		48B81A4F217FB71600E88970 /* DynamicProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B81A4E217FB71600E88970 /* DynamicProviderTest.swift */; };
 		5CB12AEB16B76563E3A812C9 /* Pods_hindsight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E01241D54980B14F3FE94E /* Pods_hindsight.framework */; };
 		8ABF35211C032DEBAB01E7ED /* Pods_hindsightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32BC16CBEFF0429C4BF490C5 /* Pods_hindsightTests.framework */; };
@@ -51,8 +60,6 @@
 		134B794021739433009370E7 /* UserEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndpoint.swift; sourceTree = "<group>"; };
 		13BA21D9217278F900064C03 /* hindsight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hindsight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13BA21DC217278F900064C03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		13BA21DE217278F900064C03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		13BA21E1217278F900064C03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13BA21E3217278FA00064C03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13BA21E6217278FA00064C03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13BA21E8217278FA00064C03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +83,17 @@
 		484C49FC217682E2005DAD02 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		484C49FE2177B74E005DAD02 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		484C4A002177B7C1005DAD02 /* UserCredentialsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialsProtocol.swift; sourceTree = "<group>"; };
+		4899846B2190A3CB00ADE46E /* BaseFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFlowCoordinator.swift; sourceTree = "<group>"; };
+		4899846D2190A45B00ADE46E /* Presenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenting.swift; sourceTree = "<group>"; };
+		489984702190A5D400ADE46E /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		489984732190A65200ADE46E /* Container+UnwrappedResolved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+UnwrappedResolved.swift"; sourceTree = "<group>"; };
+		489984752190A74200ADE46E /* DependencyConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyConfigurator.swift; sourceTree = "<group>"; };
+		489984792190B36F00ADE46E /* ConnectApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectApiClient.swift; sourceTree = "<group>"; };
+		4899847C2190B40E00ADE46E /* ConnectFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFlowCoordinator.swift; sourceTree = "<group>"; };
+		4899847F2190DCEF00ADE46E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		489984812191EDF000ADE46E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		4899848B219225F400ADE46E /* DetailFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFlowCoordinator.swift; sourceTree = "<group>"; };
+		4899848D2192276200ADE46E /* CreateFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlowCoordinator.swift; sourceTree = "<group>"; };
 		48B81A4E217FB71600E88970 /* DynamicProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicProviderTest.swift; sourceTree = "<group>"; };
 		5DDD3D2AAEC624CB701A0669 /* Pods_hindsightUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hindsightUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DEEE5EA3C2482228B4B1D74 /* Pods-hindsightUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hindsightUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hindsightUITests/Pods-hindsightUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,12 +164,16 @@
 		13BA21DB217278F900064C03 /* hindsight */ = {
 			isa = PBXGroup;
 			children = (
+				489984842192258400ADE46E /* DetailsFlow */,
+				489984832192257800ADE46E /* CreateFlow */,
+				489984772190B34400ADE46E /* ConnectFlow */,
+				489984722190A60C00ADE46E /* DependencyInjector */,
+				4899846F2190A56A00ADE46E /* ApiClient */,
+				4899846A2190A3A700ADE46E /* Coordinators */,
 				484C49EC21766C78005DAD02 /* Resources */,
 				484C49F9217682BA005DAD02 /* Model */,
 				134B793F217393FE009370E7 /* Network */,
 				13BA21DC217278F900064C03 /* AppDelegate.swift */,
-				13BA21DE217278F900064C03 /* ViewController.swift */,
-				13BA21E0217278F900064C03 /* Main.storyboard */,
 				13BA21E3217278FA00064C03 /* Assets.xcassets */,
 				13BA21E5217278FA00064C03 /* LaunchScreen.storyboard */,
 				13BA21E8217278FA00064C03 /* Info.plist */,
@@ -196,6 +218,131 @@
 				484C4A002177B7C1005DAD02 /* UserCredentialsProtocol.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4899846A2190A3A700ADE46E /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				4899846D2190A45B00ADE46E /* Presenting.swift */,
+				4899846B2190A3CB00ADE46E /* BaseFlowCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		4899846F2190A56A00ADE46E /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				489984702190A5D400ADE46E /* ApiClient.swift */,
+			);
+			path = ApiClient;
+			sourceTree = "<group>";
+		};
+		489984722190A60C00ADE46E /* DependencyInjector */ = {
+			isa = PBXGroup;
+			children = (
+				489984732190A65200ADE46E /* Container+UnwrappedResolved.swift */,
+				489984752190A74200ADE46E /* DependencyConfigurator.swift */,
+			);
+			path = DependencyInjector;
+			sourceTree = "<group>";
+		};
+		489984772190B34400ADE46E /* ConnectFlow */ = {
+			isa = PBXGroup;
+			children = (
+				4899847E2190DCD300ADE46E /* UI */,
+				4899847B2190B3B300ADE46E /* Coordinator */,
+				489984782190B34D00ADE46E /* ApiClient */,
+			);
+			path = ConnectFlow;
+			sourceTree = "<group>";
+		};
+		489984782190B34D00ADE46E /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				489984792190B36F00ADE46E /* ConnectApiClient.swift */,
+			);
+			path = ApiClient;
+			sourceTree = "<group>";
+		};
+		4899847B2190B3B300ADE46E /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4899847C2190B40E00ADE46E /* ConnectFlowCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		4899847E2190DCD300ADE46E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4899847F2190DCEF00ADE46E /* LoginViewController.swift */,
+				489984812191EDF000ADE46E /* LoginViewModel.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		489984832192257800ADE46E /* CreateFlow */ = {
+			isa = PBXGroup;
+			children = (
+				489984852192259300ADE46E /* UI */,
+				489984862192259E00ADE46E /* Coordinator */,
+				48998487219225A900ADE46E /* ApiClient */,
+			);
+			path = CreateFlow;
+			sourceTree = "<group>";
+		};
+		489984842192258400ADE46E /* DetailsFlow */ = {
+			isa = PBXGroup;
+			children = (
+				4899848A219225C200ADE46E /* UI */,
+				48998489219225BA00ADE46E /* Coordinator */,
+				48998488219225B300ADE46E /* ApiClient */,
+			);
+			path = DetailsFlow;
+			sourceTree = "<group>";
+		};
+		489984852192259300ADE46E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		489984862192259E00ADE46E /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4899848D2192276200ADE46E /* CreateFlowCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		48998487219225A900ADE46E /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ApiClient;
+			sourceTree = "<group>";
+		};
+		48998488219225B300ADE46E /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ApiClient;
+			sourceTree = "<group>";
+		};
+		48998489219225BA00ADE46E /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4899848B219225F400ADE46E /* DetailFlowCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		4899848A219225C200ADE46E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		48B81A5021821BAB00E88970 /* Endpoints */ = {
@@ -344,7 +491,6 @@
 				484C49F221767424005DAD02 /* Localizable.strings in Resources */,
 				13BA21E7217278FA00064C03 /* LaunchScreen.storyboard in Resources */,
 				13BA21E4217278FA00064C03 /* Assets.xcassets in Resources */,
-				13BA21E2217278F900064C03 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,13 +665,23 @@
 				484C49EB21766B32005DAD02 /* DynamicProvider.swift in Sources */,
 				484C49FD217682E2005DAD02 /* Topic.swift in Sources */,
 				484C49F6217677CD005DAD02 /* Generated.Strings.swift in Sources */,
+				489984742190A65200ADE46E /* Container+UnwrappedResolved.swift in Sources */,
+				489984802190DCEF00ADE46E /* LoginViewController.swift in Sources */,
 				134B794121739433009370E7 /* UserEndpoint.swift in Sources */,
-				13BA21DF217278F900064C03 /* ViewController.swift in Sources */,
 				484C49FB217682D2005DAD02 /* User.swift in Sources */,
+				489984822191EDF000ADE46E /* LoginViewModel.swift in Sources */,
 				13BA21DD217278F900064C03 /* AppDelegate.swift in Sources */,
+				489984712190A5D400ADE46E /* ApiClient.swift in Sources */,
+				4899847D2190B40E00ADE46E /* ConnectFlowCoordinator.swift in Sources */,
+				489984762190A74200ADE46E /* DependencyConfigurator.swift in Sources */,
+				4899846C2190A3CB00ADE46E /* BaseFlowCoordinator.swift in Sources */,
+				4899848C219225F400ADE46E /* DetailFlowCoordinator.swift in Sources */,
+				4899846E2190A45B00ADE46E /* Presenting.swift in Sources */,
 				484C4A012177B7C1005DAD02 /* UserCredentialsProtocol.swift in Sources */,
+				4899847A2190B36F00ADE46E /* ConnectApiClient.swift in Sources */,
 				484C49EF21766F84005DAD02 /* Generated.Colors.swift in Sources */,
 				484C49F821768245005DAD02 /* TopicsEndpoint.swift in Sources */,
+				4899848E2192276200ADE46E /* CreateFlowCoordinator.swift in Sources */,
 				484C49FF2177B74E005DAD02 /* NetworkProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,14 +719,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		13BA21E0217278F900064C03 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				13BA21E1217278F900064C03 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		13BA21E5217278FA00064C03 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -712,7 +860,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VUWTCL5W5U;
+				DEVELOPMENT_TEAM = CT27Z3RGZ8;
 				INFOPLIST_FILE = hindsight/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -731,7 +879,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VUWTCL5W5U;
+				DEVELOPMENT_TEAM = CT27Z3RGZ8;
 				INFOPLIST_FILE = hindsight/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

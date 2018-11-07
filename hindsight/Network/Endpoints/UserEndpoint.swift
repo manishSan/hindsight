@@ -33,7 +33,8 @@ extension AuthEndpoint: TargetType {
 
     var method: Moya.Method {
         switch self {
-        case .register: fallthrough
+        case .register:
+            return .post
         case .login:
             return .post
         case .refresh:
