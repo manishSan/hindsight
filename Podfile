@@ -23,6 +23,7 @@ target 'hindsight' do
   pod 'Swinject'
   pod 'SnapKit'
   pod 'SwiftLint'
+  pod 'RealmSwift'
   
    target 'hindsightTests' do
     inherit!  :search_paths
