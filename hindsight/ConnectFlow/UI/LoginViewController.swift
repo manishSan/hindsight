@@ -51,8 +51,13 @@ class LoginViewController: UIViewController {
     }
 
     func setupConstraints() {
+        let margin = 20
+        let buttonHeight = 50
         facebookConnect.snp.makeConstraints { make in
-            make.center.equalTo(view.snp.center)
+            make.leading.equalTo(view.snp.leading).offset(margin)
+            make.trailing.equalTo(view.snp.trailing).offset(-margin)
+            make.bottom.equalTo(view.snp.bottom).offset(-margin)
+            make.height.equalTo(buttonHeight)
         }
     }
 }
