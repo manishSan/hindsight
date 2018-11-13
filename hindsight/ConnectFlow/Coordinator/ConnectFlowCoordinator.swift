@@ -30,7 +30,7 @@ struct ConnectFlowCoordinator: ConnectFlowCoordinatorProtocol, PresenterProvidin
     }
 
     func presentLogInAsRoot(nc: UINavigationController) {
-        let vm = LoginViewModel(facebookConnectClosure: {})
+        let vm = LoginViewModel(container: container, facebookConnectClosure: {})
         let vc = LoginViewController(viewModel: vm)
         presenter.makeRoot(vc: vc, nc: navigationController)
     }

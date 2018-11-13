@@ -14,16 +14,36 @@ import RxSwift
 
 class LoginViewController: UIViewController {
 
-    lazy var facebookConnect: UIButton = {
-        let button = UIButton()
-        button.setTitle("Connect With Facebook", for: .normal)
-        button.backgroundColor = ColorName.hindsightBlue.color
-        return button
-    }()
-
     let viewModel: LoginViewModelProtocol
 
     let disposeBag = DisposeBag()
+
+    lazy var logoImageView: UIImageView = {
+        let view = UIImageView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    lazy var backgroundImageView: UIImageView = {
+        let view = UIImageView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    lazy var facebookConnect: HindsightLoginButton = {
+        let normalState = LoginButtonState(text: "Login With Facebook",
+                                           textColor: ColorName.hindsightWhite.color,
+                                           backgroundColor: ColorName.facebookNormalBlueColor,
+                                           image: UIImage(named: "fb_logo"))
+        let highlightState = LoginButtonState(backgroundColor: ColorName.facebookHighlightBlueColor)
+        let buttonViewModel = LoginButtonViewModel(normalState: normalState,
+                                                   highlightState: highlightState,
+                                                   didSelectClosure: { [unowned self] in
+            self.viewModel.connectFacebook()
+        })
+        let button = HindsightLoginButton(viewModel: buttonViewModel)
+        return button
+    }()
 
     init(viewModel: LoginViewModelProtocol) {
         self.viewModel = viewModel
@@ -36,23 +56,33 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
+        setupUI()
         setupConstraints()
     }
 
-    func setupViews() {
+    func setupUI() {
+        view.addSubview(backgroundImageView)
+        view.addSubview(logoImageView)
         view.addSubview(facebookConnect)
-    }
-
-    func bindViews() {
-        facebookConnect.rx.tap.bind { [unowned self] in
-            self.viewModel.connectFacebook()
-        }.disposed(by: disposeBag)
+        view.backgroundColor = ColorName.hindsightLightThemeColor
+        logoImageView.image = UIImage(named: "hindsight_logo")
+        backgroundImageView.image = UIImage(named: "hindsight_login_bk")
+        backgroundImageView.contentMode = .scaleAspectFill
     }
 
     func setupConstraints() {
         let margin = 20
         let buttonHeight = 50
+        backgroundImageView.snp.makeConstraints { make in
+            make.leading.equalTo(view.snp.leading)
+            make.trailing.equalTo(view.snp.trailing)
+            make.bottom.equalTo(view.snp.bottom)
+            make.top.equalTo(view.snp.top)
+        }
+        logoImageView.snp.makeConstraints { make in
+            make.centerX.equalTo(view.snp.centerX)
+            make.top.equalTo(view.snp.top).offset(margin)
+        }
         facebookConnect.snp.makeConstraints { make in
             make.leading.equalTo(view.snp.leading).offset(margin)
             make.trailing.equalTo(view.snp.trailing).offset(-margin)

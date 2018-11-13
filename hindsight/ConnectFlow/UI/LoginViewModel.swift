@@ -7,14 +7,18 @@
 //
 
 import Foundation
+import Swinject
 
 typealias VoidClosure = () -> Void
 
 protocol LoginViewModelProtocol {
+    var container: Container {get}
     func connectFacebook()
 }
 
 struct LoginViewModel: LoginViewModelProtocol {
+
+    let container: Container
 
     let facebookConnectClosure: VoidClosure
 

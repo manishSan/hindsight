@@ -35,6 +35,8 @@
 		4899848C219225F400ADE46E /* DetailFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4899848B219225F400ADE46E /* DetailFlowCoordinator.swift */; };
 		4899848E2192276200ADE46E /* CreateFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4899848D2192276200ADE46E /* CreateFlowCoordinator.swift */; };
 		48B81A4F217FB71600E88970 /* DynamicProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B81A4E217FB71600E88970 /* DynamicProviderTest.swift */; };
+		55A45897219A341200C5A042 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A45896219A341200C5A042 /* Extension.swift */; };
+		55A4589A219A74F500C5A042 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A45899219A74F500C5A042 /* LoginButton.swift */; };
 		5CB12AEB16B76563E3A812C9 /* Pods_hindsight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E01241D54980B14F3FE94E /* Pods_hindsight.framework */; };
 		8ABF35211C032DEBAB01E7ED /* Pods_hindsightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32BC16CBEFF0429C4BF490C5 /* Pods_hindsightTests.framework */; };
 /* End PBXBuildFile section */
@@ -95,6 +97,8 @@
 		4899848B219225F400ADE46E /* DetailFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFlowCoordinator.swift; sourceTree = "<group>"; };
 		4899848D2192276200ADE46E /* CreateFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlowCoordinator.swift; sourceTree = "<group>"; };
 		48B81A4E217FB71600E88970 /* DynamicProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicProviderTest.swift; sourceTree = "<group>"; };
+		55A45896219A341200C5A042 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		55A45899219A74F500C5A042 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		5DDD3D2AAEC624CB701A0669 /* Pods_hindsightUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hindsightUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DEEE5EA3C2482228B4B1D74 /* Pods-hindsightUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hindsightUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hindsightUITests/Pods-hindsightUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE13EC9378DD555A1B42CDE0 /* Pods-hindsightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hindsightTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-hindsightTests/Pods-hindsightTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -203,9 +207,11 @@
 		484C49EC21766C78005DAD02 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				55A45896219A341200C5A042 /* Extension.swift */,
 				484C49F5217677CD005DAD02 /* Generated.Strings.swift */,
 				484C49EE21766F84005DAD02 /* Generated.Colors.swift */,
 				484C49F421767424005DAD02 /* Localizable.strings */,
+				55A45899219A74F500C5A042 /* LoginButton.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -679,8 +685,10 @@
 				4899847D2190B40E00ADE46E /* ConnectFlowCoordinator.swift in Sources */,
 				489984762190A74200ADE46E /* DependencyConfigurator.swift in Sources */,
 				4899846C2190A3CB00ADE46E /* BaseFlowCoordinator.swift in Sources */,
+				55A4589A219A74F500C5A042 /* LoginButton.swift in Sources */,
 				4899848C219225F400ADE46E /* DetailFlowCoordinator.swift in Sources */,
 				4899846E2190A45B00ADE46E /* Presenting.swift in Sources */,
+				55A45897219A341200C5A042 /* Extension.swift in Sources */,
 				484C4A012177B7C1005DAD02 /* UserCredentialsProtocol.swift in Sources */,
 				4899847A2190B36F00ADE46E /* ConnectApiClient.swift in Sources */,
 				484C49EF21766F84005DAD02 /* Generated.Colors.swift in Sources */,
