@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
 
     lazy var facebookConnect: HindsightLoginButton = {
 
-        let normalState = LoginButtonState(text: "Login With Facebook",
+        let normalState = LoginButtonState(text: Constants.Button.Text.facebookLogin,
                                            textColor: ColorName.hindsightWhite.color,
                                            backgroundColor: ColorName.facebookButtonStateNormal.color,
                                            image: Asset.facebookLogo.image)
@@ -71,7 +71,9 @@ class LoginViewController: UIViewController {
     }
 
     func setupConstraints() {
-        let margin = 20
+        let leftRightMargin = 20
+        let topMargin = 50
+        let bottomMargin = 30
         let buttonHeight = 50
         backgroundImageView.snp.makeConstraints { make in
             make.leading.equalTo(view.snp.leading)
@@ -81,12 +83,12 @@ class LoginViewController: UIViewController {
         }
         logoImageView.snp.makeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
-            make.top.equalTo(view.snp.top).offset(margin)
+            make.top.equalTo(view.snp.top).offset(topMargin)
         }
         facebookConnect.snp.makeConstraints { make in
-            make.leading.equalTo(view.snp.leading).offset(margin)
-            make.trailing.equalTo(view.snp.trailing).offset(-margin)
-            make.bottom.equalTo(view.snp.bottom).offset(-margin)
+            make.leading.equalTo(view.snp.leading).offset(leftRightMargin)
+            make.trailing.equalTo(view.snp.trailing).offset(-leftRightMargin)
+            make.bottom.equalTo(view.snp.bottom).offset(-bottomMargin)
             make.height.equalTo(buttonHeight)
         }
     }

@@ -32,6 +32,7 @@ struct ConnectFlowCoordinator: ConnectFlowCoordinatorProtocol, PresenterProvidin
     func presentLogInAsRoot(nc: UINavigationController) {
         let vm = LoginViewModel(facebookConnectClosure: {})
         let vc = LoginViewController(viewModel: vm)
+        navigationController.isNavigationBarHidden = true
         presenter.makeRoot(vc: vc, nc: navigationController)
     }
 }

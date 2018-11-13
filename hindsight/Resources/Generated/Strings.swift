@@ -12,6 +12,13 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name
 internal enum Constants {
 
+  internal enum Button {
+    internal enum Text {
+      /// Login With Facebook
+      internal static let facebookLogin = Constants.tr("Localizable", "Button.text.facebookLogin")
+    }
+  }
+
   internal enum NonUI {
     internal enum Network {
       internal enum Auth {
