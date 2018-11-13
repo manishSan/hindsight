@@ -23,13 +23,13 @@ protocol LoginButtonStateProtocol {
 
 struct LoginButtonState: LoginButtonStateProtocol {
     /// The `Variable` represents the button text in the current state
-    var text: String
+    let text: String
     /// The `UIColor` represents the button textColor in the current state
-    var textColor: UIColor
+    let textColor: UIColor
     /// The `UIColor` represents the button backgroundColor in the current state
-    var backgroundColor: UIColor
+    let backgroundColor: UIColor
     /// The `UIImage` represents the button image in the current state
-    var image: UIImage?
+    let image: UIImage?
     /// The `Function` to construct the struct
     init(text: String, textColor: UIColor, backgroundColor: UIColor, image: UIImage?) {
         self.text = text
