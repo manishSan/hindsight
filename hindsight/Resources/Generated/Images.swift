@@ -18,10 +18,10 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
-  internal static let fbLogo = ImageAsset(name: "fb_logo")
-  internal static let hindsightLoginBk = ImageAsset(name: "hindsight_login_bk")
-  internal static let hindsightLogo = ImageAsset(name: "hindsight_logo")
-  internal static let hindsightTitleLogo = ImageAsset(name: "hindsight_title_logo")
+  internal static let facebookLogo = ImageAsset(name: "facebookLogo")
+  internal static let hindsightLoginBackground = ImageAsset(name: "hindsightLoginBackground")
+  internal static let hindsightLogo = ImageAsset(name: "hindsightLogo")
+  internal static let hindsightNavigationBarLogo = ImageAsset(name: "hindsightNavigationBarLogo")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

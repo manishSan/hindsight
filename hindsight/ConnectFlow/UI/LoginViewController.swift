@@ -31,10 +31,11 @@ class LoginViewController: UIViewController {
     }()
 
     lazy var facebookConnect: HindsightLoginButton = {
+
         let normalState = LoginButtonState(text: "Login With Facebook",
                                            textColor: ColorName.hindsightWhite.color,
                                            backgroundColor: ColorName.facebookButtonStateNormal.color,
-                                           image: UIImage(named: "fb_logo"))
+                                           image: Asset.facebookLogo.image)
         let highlightState = LoginButtonState(backgroundColor: ColorName.facebookButtonStateHighlight.color)
         let buttonViewModel = LoginButtonViewModel(normalState: normalState,
                                                    highlightState: highlightState,
@@ -64,8 +65,8 @@ class LoginViewController: UIViewController {
         view.addSubview(backgroundImageView)
         view.addSubview(logoImageView)
         view.addSubview(facebookConnect)
-        logoImageView.image = UIImage(named: "hindsight_logo")
-        backgroundImageView.image = UIImage(named: "hindsight_login_bk")
+        logoImageView.image = Asset.hindsightLogo.image
+        backgroundImageView.image = Asset.hindsightLoginBackground.image
         backgroundImageView.contentMode = .scaleAspectFill
     }
 
