@@ -12,26 +12,26 @@ import RxSwift
 
 protocol LoginButtonStateProtocol {
     /// The `Variable` represents the button text in the current state
-    var text: String? {get}
+    var text: String {get}
     /// The `UIColor` represents the button textColor in the current state
-    var textColor: UIColor? {get}
+    var textColor: UIColor {get}
     /// The `UIColor` represents the button backgroundColor in the current state
-    var backgroundColor: UIColor? {get}
+    var backgroundColor: UIColor {get}
     /// The `UIImage` represents the button image in the current state
     var image: UIImage? {get}
 }
 
 struct LoginButtonState: LoginButtonStateProtocol {
     /// The `Variable` represents the button text in the current state
-    var text: String?
+    var text: String
     /// The `UIColor` represents the button textColor in the current state
-    var textColor: UIColor?
+    var textColor: UIColor
     /// The `UIColor` represents the button backgroundColor in the current state
-    var backgroundColor: UIColor?
+    var backgroundColor: UIColor
     /// The `UIImage` represents the button image in the current state
     var image: UIImage?
     /// The `Function` to construct the struct
-    init(text: String? = nil, textColor: UIColor? = nil, backgroundColor: UIColor? = nil, image: UIImage? = nil) {
+    init(text: String, textColor: UIColor, backgroundColor: UIColor, image: UIImage?) {
         self.text = text
         self.textColor = textColor
         self.backgroundColor = backgroundColor

@@ -36,7 +36,10 @@ class LoginViewController: UIViewController {
                                            textColor: ColorName.hindsightWhite.color,
                                            backgroundColor: ColorName.facebookButtonStateNormal.color,
                                            image: Asset.facebookLogo.image)
-        let highlightState = LoginButtonState(backgroundColor: ColorName.facebookButtonStateHighlight.color)
+        let highlightState = LoginButtonState(text: Constants.Button.Text.facebookLogin,
+                                              textColor: ColorName.hindsightWhite.color,
+                                              backgroundColor: ColorName.facebookButtonStateHighlight.color,
+                                              image: Asset.facebookLogo.image)
         let buttonViewModel = LoginButtonViewModel(normalState: normalState,
                                                    highlightState: highlightState,
                                                    didSelectClosure: { [unowned self] in
