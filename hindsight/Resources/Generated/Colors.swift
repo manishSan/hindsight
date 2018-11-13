@@ -40,6 +40,12 @@ internal struct ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#0077bb"></span>
   /// Alpha: 100% <br/> (0x0077bbff)
   internal static let dollarValueCellLabel = ColorName(rgbaValue: 0x0077bbff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#304878"></span>
+  /// Alpha: 100% <br/> (0x304878ff)
+  internal static let facebookButtonStateHighlight = ColorName(rgbaValue: 0x304878ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#3c5a98"></span>
+  /// Alpha: 100% <br/> (0x3c5a98ff)
+  internal static let facebookButtonStateNormal = ColorName(rgbaValue: 0x3c5a98ff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ffffff"></span>
   /// Alpha: 100% <br/> (0xffffffff)
   internal static let header = ColorName(rgbaValue: 0xffffffff)
@@ -82,6 +88,9 @@ internal struct ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ff0000"></span>
   /// Alpha: 100% <br/> (0xff0000ff)
   internal static let hindsightRed = ColorName(rgbaValue: 0xff0000ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#654b90"></span>
+  /// Alpha: 100% <br/> (0x654b90ff)
+  internal static let hindsightTheme = ColorName(rgbaValue: 0x654b90ff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ffffff"></span>
   /// Alpha: 100% <br/> (0xffffffff)
   internal static let hindsightWhite = ColorName(rgbaValue: 0xffffffff)
@@ -94,9 +103,9 @@ internal struct ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#cccccc"></span>
   /// Alpha: 100% <br/> (0xccccccff)
   internal static let labelAlt2 = ColorName(rgbaValue: 0xccccccff)
-  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#f9f9f9"></span>
-  /// Alpha: 100% <br/> (0xf9f9f9ff)
-  internal static let navBar = ColorName(rgbaValue: 0xf9f9f9ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#654b90"></span>
+  /// Alpha: 100% <br/> (0x654b90ff)
+  internal static let navBar = ColorName(rgbaValue: 0x654b90ff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#000000"></span>
   /// Alpha: 100% <br/> (0x000000ff)
   internal static let navBarBlackText = ColorName(rgbaValue: 0x000000ff)
