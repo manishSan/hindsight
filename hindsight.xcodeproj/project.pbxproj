@@ -175,6 +175,7 @@
 				4899846F2190A56A00ADE46E /* ApiClient */,
 				4899846A2190A3A700ADE46E /* Coordinators */,
 				484C49EC21766C78005DAD02 /* Resources */,
+				AF0E8942219B823C00F06D76 /* Components */,
 				484C49F9217682BA005DAD02 /* Model */,
 				134B793F217393FE009370E7 /* Network */,
 				13BA21DC217278F900064C03 /* AppDelegate.swift */,
@@ -209,7 +210,6 @@
 				4899848F219B6FA100ADE46E /* Generated */,
 				13BA21E3217278FA00064C03 /* Images.xcassets */,
 				484C49F421767424005DAD02 /* Localizable.strings */,
-				55A45899219A74F500C5A042 /* LoginButton.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -376,6 +376,14 @@
 				5DDD3D2AAEC624CB701A0669 /* Pods_hindsightUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF0E8942219B823C00F06D76 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				55A45899219A74F500C5A042 /* LoginButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		FCC1655AB939B79E401A0A8C /* Pods */ = {
