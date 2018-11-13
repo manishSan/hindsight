@@ -50,7 +50,7 @@ DEPENDENCIES:
   - Swinject
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - Cuckoo
     - Moya
@@ -90,4 +90,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 5994512f38f06fd8879f3378434ef75ea0f044bf
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

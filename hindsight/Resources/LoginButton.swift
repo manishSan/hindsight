@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 protocol LoginButtonStateProtocol {
     /// The `Variable` represents the button text in the current state
@@ -39,28 +40,61 @@ struct LoginButtonState: LoginButtonStateProtocol {
 }
 
 protocol LoginButtonProtocol {
-    /// The `LoginButtonStateProtocol` represents button in normal state
-    var normalState: LoginButtonStateProtocol {get}
-    /// The `LoginButtonStateProtocol` represents button in highlight state
-    var highlightState: LoginButtonStateProtocol? {get}
-    /// The `Closure` delegates the button tapped action
-    var didSelectClosure: () -> Void {get}
+
+    var buttonState: Variable<LoginButtonStateProtocol> { get }
+
+    func didSelect()
+
+    func didLongPress()
+
+    func didRelease()
 }
 
 struct LoginButtonViewModel: LoginButtonProtocol {
+
+    let buttonState: Variable<LoginButtonStateProtocol>
+
     /// The `LoginButtonStateProtocol` represents button normal state
-    var normalState: LoginButtonStateProtocol
+    let normalState: LoginButtonStateProtocol
     /// The `LoginButtonStateProtocol` represents button highlight state
-    var highlightState: LoginButtonStateProtocol?
-    /// The `Closure` delegates the button tapped action
-    var didSelectClosure: () -> Void
+    let highlightState: LoginButtonStateProtocol?
+
+    let didSelectClosure: VoidClosure
+
+    init(normalState: LoginButtonStateProtocol,
+         highlightState: LoginButtonStateProtocol?,
+         didSelectClosure: @escaping VoidClosure) {
+        self.normalState = normalState
+        self.highlightState = highlightState
+        self.didSelectClosure = didSelectClosure
+        self.buttonState = Variable(normalState)
+    }
+
+    func didSelect() {
+        if let hs = highlightState {
+            buttonState.value = hs
+        }
+    }
+
+    func didLongPress() {
+        if let hs = highlightState {
+            buttonState.value = hs
+        }
+    }
+
+    func didRelease() {
+        buttonState.value = normalState
+        didSelectClosure()
+    }
 }
 
 /// This UIView is created to match the design and can be reused in the future
 /// - Ex: Google Login, Instagram Login
 class HindsightLoginButton: UIView {
 
-    var viewModel: LoginButtonProtocol
+    let viewModel: LoginButtonProtocol
+
+    let disposeBag = DisposeBag()
 
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -81,6 +115,7 @@ class HindsightLoginButton: UIView {
         super.init(frame: .zero)
         setUpUI()
         setUpConstraints()
+        bindView()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -90,22 +125,31 @@ class HindsightLoginButton: UIView {
     @objc func handleLongPressGestureRecognizer(gesture: UILongPressGestureRecognizer) {
         switch gesture.state {
         case .began:
-            update(to: viewModel.highlightState ?? viewModel.normalState)
+            self.viewModel.didLongPress()
         case .cancelled:
-            update(to: viewModel.normalState)
+            self.viewModel.didRelease()
         case .ended:
-            update(to: viewModel.normalState)
-            viewModel.didSelectClosure()
+            self.viewModel.didRelease()
         default:
             break
         }
     }
 
+    func bindView() {
+        viewModel
+            .buttonState
+            .asDriver()
+            .drive(onNext: { [unowned self] state in
+            self.update(to: state)
+        })
+            .disposed(by: disposeBag)
+    }
+
     func update(to state: LoginButtonStateProtocol) {
-        backgroundColor = state.backgroundColor ?? viewModel.normalState.backgroundColor
-        titleLabel.textColor = state.textColor ?? viewModel.normalState.textColor
-        titleLabel.text = state.text ?? viewModel.normalState.text
-        imageView.image = state.image ?? viewModel.normalState.image
+        backgroundColor = state.backgroundColor
+        titleLabel.textColor = state.textColor
+        titleLabel.text = state.text
+        imageView.image = state.image
     }
 
     func setUpUI() {
@@ -115,7 +159,6 @@ class HindsightLoginButton: UIView {
         addSubview(titleLabel)
         addSubview(imageView)
         addGestureRecognizer(longPressGestureRecognizer)
-        update(to: viewModel.normalState)
         layer.cornerRadius = 5
         isUserInteractionEnabled = true
         clipsToBounds = true
