@@ -45,7 +45,7 @@ protocol LoginButtonProtocol {
 
     func didSelect()
 
-    func didLongPress()
+    func didCancel()
 
     func didRelease()
 }
@@ -76,10 +76,8 @@ struct LoginButtonViewModel: LoginButtonProtocol {
         }
     }
 
-    func didLongPress() {
-        if let hs = highlightState {
-            buttonState.value = hs
-        }
+    func didCancel() {
+        buttonState.value = normalState
     }
 
     func didRelease() {
@@ -123,9 +121,9 @@ class HindsightLoginButton: UIView {
     @objc func handleLongPressGestureRecognizer(gesture: UILongPressGestureRecognizer) {
         switch gesture.state {
         case .began:
-            self.viewModel.didLongPress()
+            self.viewModel.didSelect()
         case .cancelled:
-            self.viewModel.didRelease()
+            self.viewModel.didCancel()
         case .ended:
             self.viewModel.didRelease()
         default:
