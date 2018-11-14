@@ -37,6 +37,8 @@
 		48998495219B6FA100ADE46E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48998492219B6FA100ADE46E /* Colors.swift */; };
 		48B81A4F217FB71600E88970 /* DynamicProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B81A4E217FB71600E88970 /* DynamicProviderTest.swift */; };
 		55A4589A219A74F500C5A042 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A45899219A74F500C5A042 /* LoginButton.swift */; };
+		55A4589D219BB01600C5A042 /* LoginButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A4589C219BB01600C5A042 /* LoginButtonState.swift */; };
+		55A4589F219BB04100C5A042 /* LoginButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A4589E219BB04100C5A042 /* LoginButtonViewModel.swift */; };
 		5CB12AEB16B76563E3A812C9 /* Pods_hindsight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E01241D54980B14F3FE94E /* Pods_hindsight.framework */; };
 		8ABF35211C032DEBAB01E7ED /* Pods_hindsightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32BC16CBEFF0429C4BF490C5 /* Pods_hindsightTests.framework */; };
 /* End PBXBuildFile section */
@@ -99,6 +101,8 @@
 		48998492219B6FA100ADE46E /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		48B81A4E217FB71600E88970 /* DynamicProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicProviderTest.swift; sourceTree = "<group>"; };
 		55A45899219A74F500C5A042 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		55A4589C219BB01600C5A042 /* LoginButtonState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonState.swift; sourceTree = "<group>"; };
+		55A4589E219BB04100C5A042 /* LoginButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonViewModel.swift; sourceTree = "<group>"; };
 		5DDD3D2AAEC624CB701A0669 /* Pods_hindsightUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hindsightUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DEEE5EA3C2482228B4B1D74 /* Pods-hindsightUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hindsightUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hindsightUITests/Pods-hindsightUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE13EC9378DD555A1B42CDE0 /* Pods-hindsightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hindsightTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-hindsightTests/Pods-hindsightTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -368,6 +372,16 @@
 			path = Endpoints;
 			sourceTree = "<group>";
 		};
+		55A4589B219BAFFC00C5A042 /* LoginButton */ = {
+			isa = PBXGroup;
+			children = (
+				55A45899219A74F500C5A042 /* LoginButton.swift */,
+				55A4589C219BB01600C5A042 /* LoginButtonState.swift */,
+				55A4589E219BB04100C5A042 /* LoginButtonViewModel.swift */,
+			);
+			path = LoginButton;
+			sourceTree = "<group>";
+		};
 		9B690D92507FFFE533A2FC70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,7 +395,7 @@
 		AF0E8942219B823C00F06D76 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				55A45899219A74F500C5A042 /* LoginButton.swift */,
+				55A4589B219BAFFC00C5A042 /* LoginButton */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -695,9 +709,11 @@
 				134B794121739433009370E7 /* UserEndpoint.swift in Sources */,
 				484C49FB217682D2005DAD02 /* User.swift in Sources */,
 				489984822191EDF000ADE46E /* LoginViewModel.swift in Sources */,
+				55A4589D219BB01600C5A042 /* LoginButtonState.swift in Sources */,
 				13BA21DD217278F900064C03 /* AppDelegate.swift in Sources */,
 				489984712190A5D400ADE46E /* ApiClient.swift in Sources */,
 				48998493219B6FA100ADE46E /* Strings.swift in Sources */,
+				55A4589F219BB04100C5A042 /* LoginButtonViewModel.swift in Sources */,
 				4899847D2190B40E00ADE46E /* ConnectFlowCoordinator.swift in Sources */,
 				489984762190A74200ADE46E /* DependencyConfigurator.swift in Sources */,
 				4899846C2190A3CB00ADE46E /* BaseFlowCoordinator.swift in Sources */,
