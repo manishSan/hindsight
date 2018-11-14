@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
         return view
     }()
 
-    lazy var facebookConnect: HindsightLoginButton = {
+    lazy var facebookConnect: LoginButton = {
 
         let normalState = LoginButtonState(text: Constants.Button.Text.facebookLogin,
                                            textColor: ColorName.hindsightWhite.color,
@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
                                                    didSelectClosure: { [unowned self] in
             self.viewModel.connectFacebook()
         })
-        let button = HindsightLoginButton(viewModel: buttonViewModel)
+        let button = LoginButton(viewModel: buttonViewModel)
         return button
     }()
 

@@ -51,15 +51,15 @@ protocol LoginButtonProtocol {
 }
 
 struct LoginButtonViewModel: LoginButtonProtocol {
-    
+
     /// The `Variable` represents a RxSwift `Observable` which will be observed for button state changes
-    let buttonState: Variable<LoginButtonStateProtocol>
+    internal let buttonState: Variable<LoginButtonStateProtocol>
     /// The `LoginButtonStateProtocol` represents button normal state
-    let normalState: LoginButtonStateProtocol
+    private let normalState: LoginButtonStateProtocol
     /// The `LoginButtonStateProtocol` represents button highlight state
-    let highlightState: LoginButtonStateProtocol?
+    private let highlightState: LoginButtonStateProtocol?
     /// The `VoidClosure` delegates the button tapped action
-    let didSelectClosure: VoidClosure
+    private let didSelectClosure: VoidClosure
 
     init(normalState: LoginButtonStateProtocol,
          highlightState: LoginButtonStateProtocol?,
@@ -88,7 +88,7 @@ struct LoginButtonViewModel: LoginButtonProtocol {
 
 /// This UIView is created to match the design and can be reused in the future
 /// - Ex: Google Login, Instagram Login
-class HindsightLoginButton: UIView {
+class LoginButton: UIView {
 
     let viewModel: LoginButtonProtocol
 
@@ -131,7 +131,7 @@ class HindsightLoginButton: UIView {
         }
     }
 
-    func bindView() {
+    private func bindView() {
         viewModel
             .buttonState
             .asDriver()
@@ -141,14 +141,14 @@ class HindsightLoginButton: UIView {
             .disposed(by: disposeBag)
     }
 
-    func update(to state: LoginButtonStateProtocol) {
+    private func update(to state: LoginButtonStateProtocol) {
         backgroundColor = state.backgroundColor
         titleLabel.textColor = state.textColor
         titleLabel.text = state.text
         imageView.image = state.image
     }
 
-    func setUpUI() {
+    private func setUpUI() {
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self,
                                                                       action: #selector(self.handleLongPressGestureRecognizer))
         longPressGestureRecognizer.minimumPressDuration = 0
@@ -160,7 +160,7 @@ class HindsightLoginButton: UIView {
         clipsToBounds = true
     }
 
-    func setUpConstraints() {
+    private func setUpConstraints() {
         let margin = 10
         imageView.snp.makeConstraints { make in
             make.leading.equalTo(self.snp.leading).offset(margin)
