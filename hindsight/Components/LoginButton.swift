@@ -51,14 +51,14 @@ protocol LoginButtonProtocol {
 }
 
 struct LoginButtonViewModel: LoginButtonProtocol {
-
+    
+    /// The `Variable` represents a RxSwift `Observable` which will be observed for button state changes
     let buttonState: Variable<LoginButtonStateProtocol>
-
     /// The `LoginButtonStateProtocol` represents button normal state
     let normalState: LoginButtonStateProtocol
     /// The `LoginButtonStateProtocol` represents button highlight state
     let highlightState: LoginButtonStateProtocol?
-
+    /// The `VoidClosure` delegates the button tapped action
     let didSelectClosure: VoidClosure
 
     init(normalState: LoginButtonStateProtocol,
