@@ -18,3 +18,5 @@
 
 "Non_UI.network.auth.refresh.api" = "/token/refresh";
 "Non_UI.network.auth.refresh.sample_Response" = "sample_login";
+
+"Button.text.facebookLogin" = "Login With Facebook";

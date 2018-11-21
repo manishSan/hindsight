@@ -14,16 +14,40 @@ import RxSwift
 
 class LoginViewController: UIViewController {
 
-    lazy var facebookConnect: UIButton = {
-        let button = UIButton()
-        button.setTitle("Connect With Facebook", for: .normal)
-        button.backgroundColor = ColorName.hindsightBlue.color
-        return button
-    }()
-
     let viewModel: LoginViewModelProtocol
 
     let disposeBag = DisposeBag()
+
+    lazy var logoImageView: UIImageView = {
+        let view = UIImageView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    lazy var backgroundImageView: UIImageView = {
+        let view = UIImageView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    lazy var facebookConnect: LoginButton = {
+
+        let normalState = LoginButtonState(text: Constants.Button.Text.facebookLogin,
+                                           textColor: ColorName.hindsightWhite.color,
+                                           backgroundColor: ColorName.facebookButtonStateNormal.color,
+                                           image: Asset.facebookLogo.image)
+        let highlightState = LoginButtonState(text: Constants.Button.Text.facebookLogin,
+                                              textColor: ColorName.hindsightWhite.color,
+                                              backgroundColor: ColorName.facebookButtonStateHighlight.color,
+                                              image: Asset.facebookLogo.image)
+        let buttonViewModel = LoginButtonViewModel(normalState: normalState,
+                                                   highlightState: highlightState,
+                                                   didSelectClosure: { [unowned self] in
+            self.viewModel.connectFacebook()
+        })
+        let button = LoginButton(viewModel: buttonViewModel)
+        return button
+    }()
 
     init(viewModel: LoginViewModelProtocol) {
         self.viewModel = viewModel
@@ -36,23 +60,39 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
+        setupUI()
         setupConstraints()
     }
 
-    func setupViews() {
+    func setupUI() {
+        view.addSubview(backgroundImageView)
+        view.addSubview(logoImageView)
         view.addSubview(facebookConnect)
-    }
-
-    func bindViews() {
-        facebookConnect.rx.tap.bind { [unowned self] in
-            self.viewModel.connectFacebook()
-        }.disposed(by: disposeBag)
+        logoImageView.image = Asset.hindsightLogo.image
+        backgroundImageView.image = Asset.hindsightLoginBackground.image
+        backgroundImageView.contentMode = .scaleAspectFill
     }
 
     func setupConstraints() {
+        let leftRightMargin = 20
+        let topMargin = 50
+        let bottomMargin = 30
+        let buttonHeight = 50
+        backgroundImageView.snp.makeConstraints { make in
+            make.leading.equalTo(view.snp.leading)
+            make.trailing.equalTo(view.snp.trailing)
+            make.bottom.equalTo(view.snp.bottom)
+            make.top.equalTo(view.snp.top)
+        }
+        logoImageView.snp.makeConstraints { make in
+            make.centerX.equalTo(view.snp.centerX)
+            make.top.equalTo(view.snp.top).offset(topMargin)
+        }
         facebookConnect.snp.makeConstraints { make in
-            make.center.equalTo(view.snp.center)
+            make.leading.equalTo(view.snp.leading).offset(leftRightMargin)
+            make.trailing.equalTo(view.snp.trailing).offset(-leftRightMargin)
+            make.bottom.equalTo(view.snp.bottom).offset(-bottomMargin)
+            make.height.equalTo(buttonHeight)
         }
     }
 }

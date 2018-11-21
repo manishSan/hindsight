@@ -10,7 +10,7 @@ HeaderAlt1        : #323232
 HeaderAlt2        : #008A24
 
 # Navbar
-NavBar            : #F9F9F9
+NavBar            : #654B90
 NavBarBlackText   : #000000
 
 # TabBar
@@ -33,9 +33,14 @@ Background        : #F5F5F5
 Label             : #323232
 LabelAlt1         : #767676
 LabelAlt2         : #CCCCCC
+ 
+# LoginButton
+FacebookButtonStateNormal    : #3C5A98
+FacebookButtonStateHighlight : #304878
 
 # Hindsight Colors
 
+HindsightTheme	       : #654B90
 HindsightBlue          : #002D72
 HindsightRed           : #FF0000
 HindsightLightRed      : #FF3333
